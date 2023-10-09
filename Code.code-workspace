@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../Code"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"cmath": "c",
+			"math.h": "c"
+		}
+	}
+}
