@@ -13,13 +13,7 @@ int main()
     struct Book books[n];
     for(int i=0;i<n;i++)
     {
-        int j = 0;
-        while ((books[i].name[j] = getchar()) != '\n')
-        {
-            j++;
-        }
-        books[i].name[j] = '\0';
-        scanf("%f\n",&books[i].value);
+        scanf("%s%f\n",books[i],&books[i].value);
     }
     int max=0,min=0;
     for(int i=0;i<n;i++)

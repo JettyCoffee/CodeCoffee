@@ -16,9 +16,7 @@ int main()
     for(int i = 0; i < n; i++)
     {
         int j = 0;
-        scanf("%s", info[i].name);
-        scanf("%ld", &info[i].birth);
-        scanf("%s", info[i].tel);
+        scanf("%s%ld%s", info[i].name,&info[i].birth,info[i].tel);
     }
     for(int i=0;i<n;i++)
     {
