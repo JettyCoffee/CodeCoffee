@@ -50,25 +50,3 @@ element_type getfront(JettyQueue *queue){
 element_type size(JettyQueue *queue){
     return queue->count;
 }
-
-int main() {
-    JettyQueue *queue = (JettyQueue *)malloc(sizeof(JettyQueue));
-    // 或者
-    // JettyQueue queue;
-    int array[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    
-    initQueue(queue);
-    
-    for (int i = 0; i < 10; i++) {
-        enqueue(queue, array[i]);
-    }
-    
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
-
-    free(queue); // 释放分配的内存
-    return 0;
-}

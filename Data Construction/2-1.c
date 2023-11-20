@@ -51,24 +51,25 @@ element_type size(JettyQueue *queue){
     return queue->count;
 }
 
-int main() {
-    JettyQueue *queue = (JettyQueue *)malloc(sizeof(JettyQueue));
-    // 或者
-    // JettyQueue queue;
-    int array[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    
-    initQueue(queue);
-    
-    for (int i = 0; i < 10; i++) {
-        enqueue(queue, array[i]);
+element_type mainBFS(JettyQueue *queue, element_type *input, element_type front_index){
+    element_type visited[MAXSIZE+1][MAXSIZE+1];
+}
+
+int main(){
+    JettyQueue queue;
+    initQueue(&queue);
+
+    element_type input[MAXSIZE + 1][MAXSIZE + 1];
+
+    for(int i = 0; i < MAXSIZE; i++){
+        for(int j = 0; j < MAXSIZE; j++){
+            scanf("%s", input[i][j]);
+        }
     }
     
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
-    printf("%d", dequeue(queue));
+    element_type front_index;
 
-    free(queue); // 释放分配的内存
+    mainBFS(&queue,input,front_index);
+
     return 0;
 }
