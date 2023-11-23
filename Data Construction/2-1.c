@@ -1,75 +1,162 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <math.h>
 
-//C语言下的队列基础模型
-#define MAXSIZE 50
-#define element_type int
+#define MAXSIZE 10
+
+typedef enum {
+    INT,FLOAT,DOUBLE,CHAR
+} DataType;
+
+// 定义通用元素结构体
+typedef struct {
+    DataType type;
+    void* data;
+} Element;
 
 //定义结构体
-typedef struct Queue{
-    element_type data[MAXSIZE];
+typedef struct Queue {
+    Element data[MAXSIZE];
     int rear, front, count;
-}JettyQueue;
+} JettyQueue;
 
 //初始化队列
-void initQueue(JettyQueue *queue){
+void initQueue(JettyQueue* queue) {
     queue->rear = -1;
     queue->front = 0;
     queue->count = 0;
 }
 
 //判断队列是否为空
-int isEmpty(JettyQueue *queue){
+int isEmpty(JettyQueue* queue) {
     return queue->count == 0;
 }
 
 //入队
-void enqueue(JettyQueue *queue, element_type element){
-    //queue->data[((queue->rear++) == MAXSIZE) ? 0 : (queue->rear++)] = element;
-    if(queue->count == MAXSIZE) return;
-    queue->data[(queue->rear++) % MAXSIZE] = element;
+void enqueue(JettyQueue* queue, Element element) {
+    if (queue->count == MAXSIZE) return;
+    queue->data[(++queue->rear) % MAXSIZE] = element;
     queue->count++;
 }
 
 //出队
-element_type dequeue(JettyQueue *queue){
-    if(queue->count == 0) return -1;
-    return queue->data[queue->front % MAXSIZE];
-    queue->front++;
+Element dequeue(JettyQueue* queue) {
+    if(queue->count == 0) return;
+    Element element = queue->data[queue->front++ % MAXSIZE];
     queue->count--;
+    return element;
 }
 
-//引用队首
-element_type getfront(JettyQueue *queue){
-    return queue->data[(queue->front) % MAXSIZE];
+DataType getDataType(const char* typeName) {
+    if (strcmp(typeName, "int") == 0) {
+        return INT;
+    } else if (strcmp(typeName, "float") == 0) {
+        return FLOAT;
+    } else if (strcmp(typeName, "char") == 0) {
+        return CHAR;
+    } else if (strcmp(typeName, "double") == 0) {
+        return DOUBLE;
+    }
 }
 
-//报告规模
-element_type size(JettyQueue *queue){
-    return queue->count;
-}
+int main() {
+    char element_type_name[10];
+    scanf("%s", element_type_name);
 
-element_type mainBFS(JettyQueue *queue, element_type *input, element_type front_index){
-    element_type visited[MAXSIZE+1][MAXSIZE+1];
-}
+    DataType element_type = getDataType(element_type_name);
 
-int main(){
     JettyQueue queue;
     initQueue(&queue);
 
-    element_type input[MAXSIZE + 1][MAXSIZE + 1];
-
-    for(int i = 0; i < MAXSIZE; i++){
-        for(int j = 0; j < MAXSIZE; j++){
-            scanf("%s", input[i][j]);
+    int n1;
+    scanf("%d", &n1);
+    Element input[n1];
+    if (element_type == INT) {
+        for (int i = 0; i < n1; i++) {
+            int* value = malloc(sizeof(int));
+            scanf("%d", value);
+            input[i].type = element_type;
+            input[i].data = value;
+            enqueue(&queue, input[i]);
+        }
+    } else if (element_type == DOUBLE) {
+        for (int i = 0; i < n1; i++) {
+            double* value = malloc(sizeof(double));
+            scanf("%lf", value);
+            input[i].type = element_type;
+            input[i].data = value;
+            enqueue(&queue, input[i]);
+        }
+    } else if (element_type == CHAR) {
+        for (int i = 0; i < n1; i++) {
+            char* value = malloc(sizeof(char));
+            scanf("%s", value);
+            input[i].type = element_type;
+            input[i].data = value;
+            enqueue(&queue, input[i]);
+        }
+    } else if (element_type == FLOAT) {
+        for (int i = 0; i < n1; i++) {
+            float* value = malloc(sizeof(float));
+            scanf("%f", value);
+            input[i].type = element_type;
+            input[i].data = value;
+            enqueue(&queue, input[i]);
         }
     }
-    
-    element_type front_index;
 
-    mainBFS(&queue,input,front_index);
+    int out;
+    scanf("%d", &out);
+    for (int i = 0; i < out; i++) {
+        dequeue(&queue);
+    }
+
+    int n2;
+    scanf("%d", &n2);
+    Element input2[n2];
+    if (element_type == INT) {
+        for (int i = 0; i < n2; i++) {
+            int* value = malloc(sizeof(int));
+            scanf("%d", value);
+            input2[i].type = element_type;
+            input2[i].data = value;
+            enqueue(&queue, input2[i]);
+        }
+    } else if (element_type == DOUBLE) {
+        for (int i = 0; i < n2; i++) {
+            double* value = malloc(sizeof(double));
+            scanf("%lf", value);
+            input2[i].type = element_type;
+            input2[i].data = value;
+            enqueue(&queue, input2[i]);
+        }
+    } else if (element_type == CHAR) {
+        for (int i = 0; i < n2; i++) {
+            char* value = malloc(sizeof(char));
+            scanf("%s", value);
+            input2[i].type = element_type;
+            input2[i].data = value;
+            enqueue(&queue, input2[i]);
+        }
+    } else if (element_type == FLOAT) {
+        for (int i = 0; i < n2; i++) {
+            float* value = malloc(sizeof(float));
+            scanf("%f", value);
+            input2[i].type = element_type;
+            input2[i].data = value;
+            enqueue(&queue, input2[i]);
+        }
+    }
+
+    for (int i = 0; i < n1 + n2 - out; i++) {
+        Element element = dequeue(&queue);
+        if (element.type == INT) printf("%d ", *((int*)element.data));
+        else if (element.type == DOUBLE) printf("%lg ", *((double*)element.data));
+        else if (element.type == CHAR) printf("%s ", (char*)element.data);
+        else if (element.type == FLOAT) printf("%g ", *((float*)element.data));
+
+        free(element.data);
+    }
 
     return 0;
 }
