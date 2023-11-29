@@ -90,9 +90,8 @@ void enqueue(JettyQueue *queue, element_type element){
 //出队
 element_type dequeue(JettyQueue *queue){
     if(queue->count == 0) return -1;
-    return queue->data[queue->front % MAXSIZE];
-    queue->front++;
     queue->count--;
+    return queue->data[queue->front++ % MAXSIZE];
 }
 
 //引用队首
