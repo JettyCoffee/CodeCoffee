@@ -16,7 +16,7 @@ void initializeSet(JettySet *set,int n,int K){
 }
 
 void DFS(JettySet *set, int cur_dep, int subset_size){
-    if(cur_dep == set->set_size || subset_size > set->target_size){
+    if(cur_dep == set->set_size){
         if(subset_size == set->target_size){
             set->count++;
         }

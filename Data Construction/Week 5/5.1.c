@@ -1,6 +1,4 @@
-//给1-n， n个元素的集合，
-//写递归程序实现求子集合大小
-//（元素个数）为K的子集合个数。
+//求解迷宫问题， 并打印出一条迷宫问题从入口到出口的路径
 #include <stdio.h>
 
 typedef struct Set{
@@ -16,7 +14,7 @@ void initializeSet(JettySet *set,int n,int K){
 }
 
 void DFS(JettySet *set, int cur_dep, int subset_size){
-    if(cur_dep == set->set_size || subset_size > set->target_size){
+    if(cur_dep == set->set_size){
         if(subset_size == set->target_size){
             set->count++;
         }
