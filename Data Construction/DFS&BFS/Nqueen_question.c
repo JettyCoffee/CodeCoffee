@@ -1,10 +1,19 @@
-//求解迷宫问题， 并打印出一条迷宫问题从入口到出口的路径
+/*N皇后问题
+描述
+
+如何在N*N的棋盘上放置N枚棋子，使得任意两个棋子不出现在同一直线上？一共有多少种方法
+
+
+输入
+1个整数，放置棋子个数N
+
+
+输出
+1*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <math.h>
 
-//C语言下的队列基础模型
 #define MAXSIZE 36
 #define element_type int
 
