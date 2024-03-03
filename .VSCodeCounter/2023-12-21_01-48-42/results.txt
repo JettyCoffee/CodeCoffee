@@ -1,0 +1,138 @@
+Date : 2023-12-21 01:48:42
+Directory : d:\Code-of-JettyCoffee
+Total : 94 files,  3320 codes, 345 comments, 360 blanks, all 4025 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C        |         93 |      3,316 |        345 |        359 |      4,020 |
+| Markdown |          1 |          4 |          0 |          1 |          5 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                   | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                      |         94 |      3,320 |        345 |        360 |      4,025 |
+| . (Files)                                                              |          1 |          4 |          0 |          1 |          5 |
+| Data Construction                                                      |         10 |        719 |        149 |         99 |        967 |
+| Data Construction\DFS&BFS                                              |          5 |        290 |         50 |         40 |        380 |
+| Data Construction\List                                                 |          1 |         65 |         18 |          7 |         90 |
+| Data Construction\Queue                                                |          2 |        251 |         50 |         24 |        325 |
+| Data Construction\Stack                                                |          2 |        113 |         31 |         28 |        172 |
+| Lang_C Study                                                           |         71 |      2,207 |         30 |        207 |      2,444 |
+| Lang_C Study\Chapter 10                                                |         10 |        273 |          0 |         34 |        307 |
+| Lang_C Study\Chapter 11                                                |          7 |        198 |          1 |         20 |        219 |
+| Lang_C Study\Chapter 4                                                 |         11 |        211 |         24 |         21 |        256 |
+| Lang_C Study\Chapter 5                                                 |          7 |        227 |          0 |         28 |        255 |
+| Lang_C Study\Chapter 6                                                 |          8 |        280 |          0 |         20 |        300 |
+| Lang_C Study\Chapter 7                                                 |          8 |        411 |          3 |         19 |        433 |
+| Lang_C Study\Chapter 8                                                 |         11 |        346 |          0 |         29 |        375 |
+| Lang_C Study\Chapter 9                                                 |          6 |        179 |          0 |         24 |        203 |
+| Lang_C Study\Personnal-Solve                                           |          3 |         82 |          2 |         12 |         96 |
+| Standard_Dictionary                                                    |          2 |         63 |          9 |          8 |         80 |
+| Test of DaSE 1                                                         |          5 |        135 |         86 |         25 |        246 |
+| Test of DaSE 2                                                         |          5 |        192 |         71 |         20 |        283 |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                               | language | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\Code-of-JettyCoffee\Data Construction\DFS&BFS\Nqueen_question.c     | C        |         53 |         12 |          5 |         70 |
+| d:\Code-of-JettyCoffee\Data Construction\DFS&BFS\maze.c                | C        |        105 |         24 |          9 |        138 |
+| d:\Code-of-JettyCoffee\Data Construction\DFS&BFS\plus_set.c            | C        |         50 |         11 |         18 |         79 |
+| d:\Code-of-JettyCoffee\Data Construction\DFS&BFS\snowing_long.c        | C        |         51 |          0 |          4 |         55 |
+| d:\Code-of-JettyCoffee\Data Construction\DFS&BFS\subset_counter.c      | C        |         31 |          3 |          4 |         38 |
+| d:\Code-of-JettyCoffee\Data Construction\List\Josephus_quesetion.c     | C        |         65 |         18 |          7 |         90 |
+| d:\Code-of-JettyCoffee\Data Construction\Queue\closest_letter.c        | C        |        113 |         20 |          6 |        139 |
+| d:\Code-of-JettyCoffee\Data Construction\Queue\standard_queue_always.c | C        |        138 |         30 |         18 |        186 |
+| d:\Code-of-JettyCoffee\Data Construction\Stack\match_brackets.c        | C        |         70 |         20 |         14 |        104 |
+| d:\Code-of-JettyCoffee\Data Construction\Stack\string_stack.c          | C        |         43 |         11 |         14 |         68 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-1.c                  | C        |         45 |          0 |          4 |         49 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-10.c                 | C        |         22 |          0 |          4 |         26 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-2.c                  | C        |         29 |          0 |          4 |         33 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-3.c                  | C        |         18 |          0 |          3 |         21 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-4.c                  | C        |         35 |          0 |          4 |         39 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-5.c                  | C        |         23 |          0 |          3 |         26 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-6.c                  | C        |         22 |          0 |          3 |         25 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-7.c                  | C        |         23 |          0 |          3 |         26 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-8.c                  | C        |         23 |          0 |          3 |         26 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 10\10-9.c                  | C        |         33 |          0 |          3 |         36 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 11\11-1.c                  | C        |         15 |          0 |          1 |         16 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 11\11-2.c                  | C        |         22 |          0 |          1 |         23 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 11\11-3.c                  | C        |         31 |          0 |          3 |         34 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 11\11-4.c                  | C        |         18 |          1 |          3 |         22 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 11\11-5.c                  | C        |         41 |          0 |          3 |         44 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 11\11-6 copy.c             | C        |         19 |          0 |          4 |         23 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 11\11-6.c                  | C        |         52 |          0 |          5 |         57 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-1.c                    | C        |         17 |          0 |          1 |         18 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-10.c                   | C        |         11 |          0 |          1 |         12 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-11.c                   | C        |         24 |          0 |          1 |         25 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-2.c                    | C        |         25 |          0 |          3 |         28 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-3.c                    | C        |         17 |          0 |          3 |         20 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-4.c                    | C        |         12 |          0 |          1 |         13 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-5.c                    | C        |         20 |          0 |          5 |         25 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-6.c                    | C        |         34 |          0 |          0 |         34 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-7.c                    | C        |         26 |          0 |          4 |         30 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-8.c                    | C        |         13 |          0 |          1 |         14 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 4\4-9.c                    | C        |         12 |         24 |          1 |         37 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 5\5-1.c                    | C        |         24 |          0 |          4 |         28 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 5\5-2.c                    | C        |         40 |          0 |          4 |         44 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 5\5-3.c                    | C        |         15 |          0 |          3 |         18 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 5\5-4.c                    | C        |         37 |          0 |          4 |         41 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 5\5-5.c                    | C        |         26 |          0 |          4 |         30 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 5\5-6.c                    | C        |         48 |          0 |          5 |         53 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 5\5-7.c                    | C        |         37 |          0 |          4 |         41 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-1.c                    | C        |         42 |          0 |          3 |         45 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-2.c                    | C        |         12 |          0 |          1 |         13 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-3.c                    | C        |         22 |          0 |          1 |         23 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-4.c                    | C        |         52 |          0 |          3 |         55 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-5.c                    | C        |         45 |          0 |          4 |         49 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-6.c                    | C        |         37 |          0 |          3 |         40 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-7.c                    | C        |         43 |          0 |          3 |         46 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 6\6-8.c                    | C        |         27 |          0 |          2 |         29 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-1.c                    | C        |         30 |          0 |          2 |         32 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-2.c                    | C        |         33 |          3 |          7 |         43 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-3.c                    | C        |         27 |          0 |          1 |         28 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-4.c                    | C        |         28 |          0 |          1 |         29 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-5.c                    | C        |         51 |          0 |          2 |         53 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-6.c                    | C        |         19 |          0 |          2 |         21 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-7.c                    | C        |        121 |          0 |          2 |        123 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 7\7-8.c                    | C        |        102 |          0 |          2 |        104 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-1.c                    | C        |         16 |          0 |          3 |         19 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-10.c                   | C        |         37 |          0 |          1 |         38 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-11.c                   | C        |         37 |          0 |          1 |         38 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-2.c                    | C        |         26 |          0 |          3 |         29 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-3.c                    | C        |         30 |          0 |          3 |         33 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-4.c                    | C        |         43 |          0 |          3 |         46 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-5.c                    | C        |         35 |          0 |          3 |         38 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-6.c                    | C        |         25 |          0 |          3 |         28 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-7.c                    | C        |         31 |          0 |          5 |         36 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-8.c                    | C        |         20 |          0 |          1 |         21 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 8\8-9.c                    | C        |         46 |          0 |          3 |         49 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 9\9-1.c                    | C        |         23 |          0 |          6 |         29 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 9\9-2.c                    | C        |         22 |          0 |          3 |         25 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 9\9-3.c                    | C        |         21 |          0 |          3 |         24 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 9\9-4.c                    | C        |         29 |          0 |          2 |         31 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 9\9-5.c                    | C        |         35 |          0 |          3 |         38 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Chapter 9\9-6.c                    | C        |         49 |          0 |          7 |         56 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Personnal-Solve\Description.c      | C        |         20 |          0 |          4 |         24 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Personnal-Solve\candy_divide.c     | C        |         51 |          0 |          2 |         53 |
+| d:\Code-of-JettyCoffee\Lang_C Study\Personnal-Solve\test.c             | C        |         11 |          2 |          6 |         19 |
+| d:\Code-of-JettyCoffee\README.md                                       | Markdown |          4 |          0 |          1 |          5 |
+| d:\Code-of-JettyCoffee\Standard_Dictionary\Standard_Queue.c            | C        |         31 |          5 |          2 |         38 |
+| d:\Code-of-JettyCoffee\Standard_Dictionary\Standard_Stack.c            | C        |         32 |          4 |          6 |         42 |
+| d:\Code-of-JettyCoffee\Test of DaSE 1\1-2.c                            | C        |         13 |         39 |          1 |         53 |
+| d:\Code-of-JettyCoffee\Test of DaSE 1\1-3.c                            | C        |         25 |         20 |          7 |         52 |
+| d:\Code-of-JettyCoffee\Test of DaSE 1\1-4.c                            | C        |         15 |          9 |          5 |         29 |
+| d:\Code-of-JettyCoffee\Test of DaSE 1\1-5.c                            | C        |         30 |          9 |          8 |         47 |
+| d:\Code-of-JettyCoffee\Test of DaSE 1\1-6.c                            | C        |         52 |          9 |          4 |         65 |
+| d:\Code-of-JettyCoffee\Test of DaSE 2\Genshin_Sushu.c                  | C        |         42 |          9 |          2 |         53 |
+| d:\Code-of-JettyCoffee\Test of DaSE 2\question2.c                      | C        |         32 |         10 |          6 |         48 |
+| d:\Code-of-JettyCoffee\Test of DaSE 2\question3.c                      | C        |         43 |         24 |          5 |         72 |
+| d:\Code-of-JettyCoffee\Test of DaSE 2\question4.c                      | C        |         25 |         14 |          2 |         41 |
+| d:\Code-of-JettyCoffee\Test of DaSE 2\question5.c                      | C        |         50 |         14 |          5 |         69 |
+| Total                                                                  |          |      3,320 |        345 |        360 |      4,025 |
++------------------------------------------------------------------------+----------+------------+------------+------------+------------+
