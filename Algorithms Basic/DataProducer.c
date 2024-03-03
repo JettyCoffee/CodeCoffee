@@ -4,6 +4,8 @@
 #include <string.h>
 #include <math.h>
 
+#define MAX 10000000
+
 void MainMergeSort(int *data, int begin, int end, int *temp);
 void MergeSort(int *data, int n);
 
@@ -16,12 +18,13 @@ int main() {
     scanf("%d%d", &front_n, &back_n);
     N = (int)(front_n * pow(10, back_n));
     min = 0;
-    max = 1000000;
+    max = MAX;
     srand(time(NULL));
     int *output;
     output = malloc(sizeof(int) * N);
     for (int i = 0; i < N; i++) {
-        output[i] = rand() % (max - min + 1) + min;
+        output[i] = rand() * (max - min + 1);
+        output[i] += min;
     }
     if (T == 0 || T == 1) {
         MergeSort(output, N);
