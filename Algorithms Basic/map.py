@@ -35,20 +35,25 @@ def read_data(filename):
 root = tk.Tk()
 root.withdraw()  # 隐藏主窗口
 
-# 打开文件对话框并获取文件名
-filename = filedialog.askopenfilename(title="选择数据文件", filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+# 打开第一个文件对话框并获取文件名
+filename1 = filedialog.askopenfilename(title="选择第一个数据文件", filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
 
-if filename:
+# 打开第二个文件对话框并获取文件名
+#filename2 = filedialog.askopenfilename(title="选择第二个数据文件", filetypes=(("Text files", "*.txt"), ("All files", "*.*")))
+
+
     # 读取数据
-    title = os.path.basename(filename)
-    x, y = read_data(filename)
+title1 = os.path.basename(filename1)
+#title2 = os.path.basename(filename2)
+x1, y1 = read_data(filename1)
+#x2, y2 = read_data(filename2)
 
     # 绘制折线图和数据点
-    plt.plot(x, y, marker='o', linestyle='-')
-    plt.scatter(x, y, color='red')
-    plt.xlabel('N')
-    plt.ylabel('Time Cost')
-    plt.title(title)
-    plt.show()
-else:
-    print("没有选择文件。")
+plt.plot(x1, y1, marker='o', linestyle='-', label=title1)
+#plt.plot(x2, y2, marker='o', linestyle='-', label=title2)
+plt.xlabel('Size')
+plt.ylabel('Time Cost(s)')
+#plt.title("Comparison of Two Algorithms Time Cost")
+plt.title("HeapSort Time Cost - Size")
+plt.legend()
+plt.show()
