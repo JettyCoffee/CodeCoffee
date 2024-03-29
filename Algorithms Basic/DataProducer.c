@@ -3,22 +3,25 @@
 #include <time.h>
 #include <string.h>
 #include <math.h>
-
+#define M 10000
+#define N 1000
 
 void MainMergeSort(int *data, int begin, int end, int *temp);
 void MergeSort(int *data, int n);
-void DataProducer(int *data);
-void DataProducer(int *data){
-    int N, min, max, T;
-    printf("请选择数据集类型：\n顺序递增(最佳情况)(0)、顺序递减(最差情况)(1)、随机取值(2)\n");
-    scanf("%d", &T);
-    printf("请输入科学计数法表示的数据大小:\n");
-    int front_n, back_n;
-    scanf("%d%d", &front_n, &back_n);
-    N = (int)(front_n * pow(10, back_n));
-    min = 0;
-    max = 10000000;
-    data = (int*)malloc(sizeof(int) * N);
+int main(){
+    int min, max, T;
+    //printf("请选择数据集类型：\n顺序递增(最佳情况)(0)、顺序递减(最差情况)(1)、随机取值(2)\n");
+    //scanf("%d", &T);
+    T = 2;
+    //printf("请输入科学计数法表示的数据大小:\n");
+    //int front_n, back_n;
+    //scanf("%d%d", &front_n, &back_n);
+    //N = (int)(front_n * pow(10, back_n));
+    min = 1;
+    max = M;
+    //scanf("%d", &max);
+    //max = 10000000;
+    int *data = (int*)malloc(sizeof(int) * N);
     for (int i = 0; i < N; i++) {
         data[i] = rand() % (max - min + 1);
         data[i] += min;
@@ -33,6 +36,17 @@ void DataProducer(int *data){
             }
         }
     }
+    char filename[100];
+    sprintf(filename, "output_%d_%d.txt",max, N);
+    FILE *file = fopen(filename, "a");
+    if (file == NULL) {
+        printf("无法打开文件 %s\n", filename);
+        return 1;
+    }
+    for (int i = 0; i < N; i++) {
+        fprintf(file, "%d\n", data[i]);
+    }
+    fclose(file);
     return;
 }
 void MainMergeSort(int *data, int begin, int end, int *temp) {
