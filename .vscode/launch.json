@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/Code-of-JettyCoffee",
-      "program": "e:/Code-of-JettyCoffee/build/Debug/outDebug",
+      "cwd": "e:/CodeCoffee",
+      "program": "e:/CodeCoffee/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
