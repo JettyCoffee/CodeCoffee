@@ -2,7 +2,6 @@
 import pandas as pd
 import random
 import os
-import time
 
 file_path = r'E:\CodeCoffee\Algorithms Basic\data.xls'
 data = pd.read_excel(file_path,index_col=0)
@@ -11,13 +10,8 @@ data = pd.read_excel(file_path,index_col=0)
 top_downloaded = data.nlargest(1, '下载量')
 lowest_downloaded = data.nsmallest(1, '下载量')
 
-print("Top Downloaded:")
-transposed_top_downloaded = top_downloaded.transpose() ##行列转置
-print(transposed_top_downloaded)
-
-print("\nLowest Downloaded:")
-transposed_low_downloaded = lowest_downloaded.transpose() ##行列转置
-print(transposed_low_downloaded)
+#print (top_downloaded)
+#print (lowest_downloaded)
 
 def partition(jettylist, left, right, key_index):
     key = jettylist[key_index]
@@ -100,51 +94,10 @@ def find_mid(jettylist, left, right):
     mid = mid_list[group_count // 2]
     return mid
 
-def quick_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    else:
-        pivot = arr[0]
-        less_than_pivot = [x for x in arr[1:] if x <= pivot]
-        greater_than_pivot = [x for x in arr[1:] if x > pivot]
-        return quick_sort(less_than_pivot) + [pivot] + quick_sort(greater_than_pivot)
-
-number = 4600
-
 view_counts = data['浏览量'].tolist()
-s_time_start = time.time()
-view_1000st1 = select(view_counts, 0, len(view_counts)-1, number)
-s_time_end = time.time()
-
-view_counts = data['浏览量'].tolist()
-rs_time_start = time.time()
-view_1000st = random_select(view_counts, 0, len(view_counts)-1, number)
-rs_time_end = time.time()
-
-view_counts = data['浏览量'].tolist()
-qs_time_start = time.time()
-jettylist_sorted = quick_sort(view_counts)
-qs_time_end = time.time()
-view_1000st2 = jettylist_sorted[number-1]
-
-print("\nRandom_Select_Result:")
-#print(data.iloc[view_1000st])
-print("函数执行时间：", rs_time_end-rs_time_start, "秒")
-
-print("\nSelect_Result:")
-#print(data.iloc[view_1000st1])
-print("函数执行时间：", s_time_end-s_time_start, "秒")
-
-print("\nQuickSort_Result:")
-#print(data.iloc[view_1000st2])
-print("函数执行时间：", qs_time_end-qs_time_start, "秒")
-
-unconditionally_open = data[data['开放属性'] == '无条件开放']
-sorted_data = unconditionally_open.sort_values(by='首次发布日期')
-result = sorted_data.iloc[99]  # 第 100 行数据，索引从 0 开始
-print("\n在所有无条件开放的数据集合中，首次发布时间第100早的数据集合是:")
-print(result)
-
-print("函数执行时间：", rs_time_end-rs_time_start, "秒")
-print("函数执行时间：", s_time_end-s_time_start, "秒")
-print("函数执行时间：", qs_time_end-qs_time_start, "秒")
+view_1000st = random_select(view_counts, 0, len(view_counts)-1, 1000)
+view_1000st1 = select(view_counts, 0, len(view_counts)-1, 1000)
+print (view_1000st)
+print (view_1000st1)
+#print(type(data))
+#print(data)
