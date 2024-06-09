@@ -52,7 +52,7 @@ int main(){
     return 0;
 }
 
-void InsertHeap(JettyData *data, int data1){
+void InsertHeap(JettyData *data, int data1){ // Insert data1 into the heap
     if(data->size >= data->capacity) {
         // Handle resizing if necessary
         return;
