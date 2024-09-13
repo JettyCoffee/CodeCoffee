@@ -57,25 +57,35 @@ for base_index, base_info in base_stations.iterrows():
         for device2 in connected_devices[i+1:]:
             G.add_edge(device1, device2)
 
-
-
-# 定义DFS算法找到所有最大团
-def dfs_cliques(current_clique, candidates, excluded, cliques):
-    if not candidates and not excluded:
-        cliques.append(current_clique[:])
-        return
-    for node in candidates[:]:
-        new_candidates = [n for n in candidates if G.has_edge(node, n)] # 只保留与当前节点相连的节点
-        new_excluded = [n for n in excluded if G.has_edge(node, n)] 
-        current_clique.append(node) # 将当前节点添加到团中
-        dfs_cliques(current_clique, new_candidates, new_excluded, cliques) # 递归
-        current_clique.pop() # 回溯
-        candidates.remove(node) # 将当前节点从候选节点中移除
-        excluded.append(node) # 将当前节点添加到排除节点中
-
-# 找到所有最大团
 cliques = []
-dfs_cliques([], list(G.nodes), [], cliques)
+# 定义深度优先搜索最大团函数
+def dfs_max_clique(graph, nodes):
+    max_clique = []
+    stack = [(nodes, [])] # 用栈来保存搜索状态
+    
+    while stack:
+        remaining, current_clique = stack.pop() # 弹出栈顶元素
+        if not remaining:
+            if len(current_clique) > len(max_clique):
+                max_clique = current_clique
+        else:
+            n = remaining[0]
+            neighbors = set(graph.neighbors(n))
+            new_remaining = [m for m in remaining if m in neighbors]
+            stack.append((new_remaining, current_clique + [n]))
+            stack.append((remaining[1:], current_clique))
+    
+    return max_clique
+
+
+# 遍历所有基站，找到最大团
+for base_index, base_info in base_stations.iterrows():
+    connected_devices = [n for n in G.neighbors(base_index + device_count) if G.nodes[n]['type'] == 'device']
+    # 把基站也加入到子图中
+    connected_devices.append(base_index + device_count)
+    subgraph = G.subgraph(connected_devices)  # 生成子图
+    max_clique = dfs_max_clique(subgraph, connected_devices)
+    cliques.append(max_clique)
 
 # 可视化
 m = folium.Map(location=[devices['latitude'].mean(), devices['longitude'].mean()], zoom_start=12)
@@ -92,12 +102,11 @@ for i, clique in enumerate(cliques):
     if not clique:  # 如果当前基站没有形成团，则跳过
         continue
     node_color = generate_random_color()
-    station_index = clique[len(clique)-1]
-    folium.CircleMarker(location=(G.nodes[station_index]['pos'][0], G.nodes[station_index]['pos'][1]), radius=5, color='black', fill=False).add_to(m)
+    folium.CircleMarker(location=(G.nodes[i+device_count]['pos'][0], G.nodes[i+device_count]['pos'][1]), radius=5, color='black', fill=False).add_to(m)
     for node in clique:
         folium.CircleMarker(location=(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1]), radius=5, color=node_color, fill=True).add_to(m)
         # 当前选择的设备连接到基站
         folium.PolyLine(locations=[(G.nodes[node]['pos'][0], G.nodes[node]['pos'][1]),
-                                    (G.nodes[station_index]['pos'][0], G.nodes[station_index]['pos'][1])], color=node_color).add_to(m)
+                                    (G.nodes[i+device_count]['pos'][0], G.nodes[i+device_count]['pos'][1])], color=node_color).add_to(m)
 
 m.save('E:/CodeCoffee/Algorithms Basic/map_cliques.html')
